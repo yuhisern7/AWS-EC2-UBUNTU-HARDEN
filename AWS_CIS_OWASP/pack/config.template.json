@@ -1,0 +1,46 @@
+```json
+{
+  "packages": {
+    "install": ["jq", "ufw", "fail2ban", "unattended-upgrades"]
+  },
+  "firewall": {
+    "enable": true,
+    "allow_ssh": true,
+    "allow_http": true,
+    "allow_https": true,
+    "rate_limit_ssh": true
+  },
+  "fail2ban": {
+    "enable": true
+  },
+  "unattended_upgrades": {
+    "enable": true
+  },
+  "ssh": {
+    "allow_password": null,
+    "permit_root_login": null
+  },
+  "http_headers": {
+    "enable_csp": false,
+    "csp_value": "default-src 'self' https: data:; frame-ancestors 'self'; object-src 'none'; base-uri 'self';"
+  },
+  "auditd": {
+    "enable": false
+  },
+  "aide": {
+    "enable": false
+  },
+  "modsecurity": {
+    "enable": false,
+    "owasp_crs": false
+  },
+  "sysctl": {
+    "enable": false,
+    "params": {
+      "net.ipv4.conf.all.log_martians": 1,
+      "net.ipv4.conf.default.accept_redirects": 0,
+      "net.ipv6.conf.all.accept_redirects": 0
+    }
+  }
+}
+```

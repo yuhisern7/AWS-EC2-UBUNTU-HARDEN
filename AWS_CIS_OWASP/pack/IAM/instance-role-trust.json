@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EC2AssumeRole",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": [
+            "ap-southeast-1",      // Singapore (near MY)
+            "ap-southeast-2"       // Sydney (optional DR region)
+          ]
+        }
+      }
+    }
+  ]
+}
